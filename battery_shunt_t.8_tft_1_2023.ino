@@ -4,8 +4,11 @@ Hardware required
 ESP8266 - I used wemos d1 mini (clones) i bought a 20 pack for about $3 each.
 INA219 Module - Used for measuring the current and voltage accuratly - I use the modules from ali express with a built in 1 ohm resistor. You will need to desolder this then run leads from the pcb to the new shunt.
 Shunt - I have purchased quite a few shunts from a store called "CG Instrument Store" search "CG FL-2C 20a" to find the shunt I have used for this sketch. I have used 20amp and 50amp and find both accurate altho as you go up in amps you loose resolution e.g. each step becomes in the 10s of milliamps and accuracy over days becomes off.
-Screen - I am pretty sure I used these - https://www.aliexpress.com/item/32834972099.html the 1.3 inch version that says IPS. I found these screens to be quite nice however I found a higher resolution 1.6 inch screen from another seller I would like to swap over to, its a really nice screen i suspect used for watches. (https://www.aliexpress.com/item/1005005039702168.html).
+Screen - I am pretty sure I used these - https://www.aliexpress.com/item/32834972099.html the 1.8 inch version. I found these screens to be quite nice however I found a higher resolution 1.6 inch screen from another seller I would like to swap over to, its a really nice screen i suspect used for watches. (https://www.aliexpress.com/item/1005005039702168.html).
 The screen required modifications to user_setup.h for the type of screen. I recall spending hours trying to get the display to work correctly just trying all the variations one at a time.
+
+I have put this into a fully 3d printed battery I build and has been used over the last year at least weekly. It shows 1000's of eeprom writes and it still seems to work fine so far.
+I will find a pic of the wiring or take it apart and put onto the github repository soon.
 
 */
 
@@ -27,7 +30,7 @@ The screen required modifications to user_setup.h for the type of screen. I reca
    setup DEEP SLEEP - reduce power usage
 
 
-   for the 1.3 inch use Setup 18 ST7789 without any changes.
+   for the 1.3 inch use Setup 18 ST7789 without any changes. (Im not sure if the rest of the code works with 1.3 i dont recall why i put this comment here)
  * */
 
 
