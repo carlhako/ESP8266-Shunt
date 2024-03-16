@@ -78,8 +78,8 @@ TraceWidget tr = TraceWidget(&gr);     // Graph trace tr with pointer to gr
 ////////////////////////////////
 const word bat_capacity = 100;
 const word dev_mode_splash = 0; // set to 1 to disable splash screen
-const byte dev_speed = 50; // 0 for normal mode, 100 for 100ms 
 const byte dev_random_ma = 0; // if this is set then random numbers are used to amps instead of actual readings.
+const byte dev_speed = 0; // this is how often to refresh, speeding it up just helped with developing, 0 for normal mode (1000ms) , 100 for 100ms 
 const long dev_random_ma_min = 10000;
 const long dev_random_ma_max = 50000;
 const byte dev_start_screen = 40; // 40 - display 5
