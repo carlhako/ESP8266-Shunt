@@ -1,3 +1,16 @@
+/*
+
+Hardware required
+ESP8266 - I used wemos d1 mini (clones) i bought a 20 pack for about $3 each.
+INA219 Module - Used for measuring the current and voltage accuratly - I use the modules from ali express with a built in 1 ohm resistor. You will need to desolder this then run leads from the pcb to the new shunt.
+Shunt - I have purchased quite a few shunts from a store called "CG Instrument Store" search "CG FL-2C 20a" to find the shunt I have used for this sketch. I have used 20amp and 50amp and find both accurate altho as you go up in amps you loose resolution e.g. each step becomes in the 10s of milliamps and accuracy over days becomes off.
+Screen - I am pretty sure I used these - https://www.aliexpress.com/item/32834972099.html the 1.3 inch version that says IPS. I found these screens to be quite nice however I found a higher resolution 1.6 inch screen from another seller I would like to swap over to, its a really nice screen i suspect used for watches. (https://www.aliexpress.com/item/1005005039702168.html).
+The screen required modifications to user_setup.h for the type of screen. I recall spending hours trying to get the display to work correctly just trying all the variations one at a time.
+
+*/
+
+
+
 
 /* TO DO
  *  
@@ -180,6 +193,7 @@ void setup() {
 
 
   // display splash screen
+  // this was just playing around and something i made when i was a kid on an amstrad pc using basic in dos something I replicated here.
   tft.fillScreen(TFT_BLACK);
   if (!dev_mode_splash){
     for (long i=0; i<1500; i++){
