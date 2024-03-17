@@ -10,6 +10,9 @@ The screen required modifications to user_setup.h for the type of screen. I reca
 I have put this into a fully 3d printed battery I build and has been used over the last year at least weekly. It shows 1000's of eeprom writes and it still seems to work fine so far.
 I will find a pic of the wiring or take it apart and put onto the github repository soon.
 
+other things to do:
+modify user_setup.h in the espi library. Change the driver to ST7735_DRIVER 
+
 */
 
 
@@ -38,7 +41,7 @@ I will find a pic of the wiring or take it apart and put onto the github reposit
 
 
 #include <INA219.h>// arduinoina219 - https://github.com/flav1972/ArduinoINA219
-                   // this library has a bug it will error when you combile, open INA219.h from your library path
+                   // this library has a bug it will error when you compile, open INA219.h from your library path
                    // correct line 212 by putting a comma at the end of the line
                    // someone raised an issue on it but it has not been resolved.
 
@@ -56,6 +59,7 @@ I will find a pic of the wiring or take it apart and put onto the github reposit
 // lcd
 #include <TFT_eSPI.h> //https://github.com/Bodmer/TFT_eSPIs
 #include <SPI.h>
+// these were generated somehow i forget, check the espi github repo i think theres instructions there. 
 #include "NotoSansBold15.h"
 #include "NotoSansBold36.h"
 #define AA_FONT_SMALL NotoSansBold15
@@ -206,10 +210,12 @@ void setup() {
   // this was just playing around and something i made when i was a kid on an amstrad pc using basic in dos something I replicated here.
   tft.fillScreen(TFT_BLACK);
   if (!dev_mode_splash){
+    
     for (long i=0; i<1500; i++){
       tft.drawLine(tft.width()/2, tft.height()/2, random(0,tft.width()), random(0,tft.height()), random(0,65536));
       delay(1);
     }
+    
     tft.setTextColor(TFT_GREEN, TFT_BLACK);
     tft.drawString("Battery Shunt v1.0",0,0,2);
     tft.setTextFont(2);
